@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  color: #1a1a1a;
+  background: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Neo-brutalism amber color scheme */
+:root {
+  --primary: #F59E0B;    /* Warm Amber */
+  --secondary: #D97706;   /* Darker Amber */
+  --accent: #B45309;      /* Darkest Amber */
+  --dark: #1a1a1a;
+  --light: #FEF3C7;       /* Light Amber */
+  --border: #000000;
+  --background: #f5f1eb;
+}
+
+/* Custom scrollbar - neo-brutalism style */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border: 2px solid var(--border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border: 2px solid var(--border);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid var(--primary);
+  white-space: nowrap;
+  animation: typewriter 3s steps(40, end);
+}
+
+/* Neo-brutalism utility classes */
+.neo-border {
+  border: 3px solid var(--border);
+  box-shadow: 6px 6px 0px var(--border);
+}
+
+.neo-border-thin {
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0px var(--border);
+}
+
+.neo-card {
+  border: 3px solid var(--border);
+  box-shadow: 8px 8px 0px var(--border);
+  transition: all 0.2s ease;
+}
+
+.neo-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 12px 12px 0px var(--border);
+}
+
+.neo-button {
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0px var(--border);
+  transition: all 0.1s ease;
+}
+
+.neo-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--border);
+}
+
+.neo-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--border);
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Background patterns */
+.bg-pattern {
+  background-color: var(--background);
+  background-image: 
+    radial-gradient(var(--primary) 0.5px, transparent 0.5px),
+    radial-gradient(var(--primary) 0.5px, var(--background) 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
